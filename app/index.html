@@ -11,6 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="app.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
@@ -45,9 +46,9 @@
 
   <div class="whiteSection container-fluid" id="summary" ng-controller="getSummary">
     <p class="label">
-      <span class="glyphicon glyphicon-star"></span>
+      <span class="glyphicon glyphicon-user"></span>
       summary
-      <span class="glyphicon glyphicon-star"></span></p>
+      <span class="glyphicon glyphicon-user"></span></p>
     <p>
 			<span ng-repeat="item in result">
 				{{item.value}} <br/><br/>
@@ -55,7 +56,7 @@
     </p>
   </div>
 
-  <div class="greenSection container-fluid" id="experience" ng-controller="getExperience">
+  <div class="blueSection container-fluid" id="experience" ng-controller="getExperience">
     <p class="label">
       <span class="glyphicon glyphicon-star"></span>
       Experience
@@ -94,7 +95,7 @@
     </div>
   </div>
 
-  <div class="greenSection container-fluid" id="skills" ng-controller="getSkill">
+  <div class="blueSection container-fluid" id="skills" ng-controller="getSkill">
     <p class="label">
       <span class="glyphicon glyphicon-star"></span>
       Skill
