@@ -46,9 +46,9 @@
 
   <div class="whiteSection container-fluid" id="summary" ng-controller="getSummary">
     <p class="label">
-      <span class="glyphicon glyphicon-user"></span>
+      <span class="glyphicon glyphicon-fire"></span>
       summary
-      <span class="glyphicon glyphicon-user"></span></p>
+      <span class="glyphicon glyphicon-fire"></span></p>
     <p>
 			<span ng-repeat="item in result">
 				{{item.value}} <br/><br/>
@@ -58,9 +58,9 @@
 
   <div class="blueSection container-fluid" id="experience" ng-controller="getExperience">
     <p class="label">
-      <span class="glyphicon glyphicon-star"></span>
+      <span class="glyphicon glyphicon-fire"></span>
       Experience
-      <span class="glyphicon glyphicon-star"></span></p>
+      <span class="glyphicon glyphicon-fire"></span></p>
     <div class="timeline">
       <div class="row" ng-repeat="item in result">
         <div class="year">{{item.year}}</div>
@@ -79,9 +79,9 @@
 
   <div class="whiteSection container-fluid" id="project" ng-controller="getProject">
     <p class="label">
-      <span class="glyphicon glyphicon-star"></span>
+      <span class="glyphicon glyphicon-fire"></span>
       Project
-      <span class="glyphicon glyphicon-star"></span></p>
+      <span class="glyphicon glyphicon-fire"></span></p>
     <div class="projects" >
       <div ng-repeat="item in result | filter:query as filtered">
         <div class="col-md-4">
@@ -97,9 +97,9 @@
 
   <div class="blueSection container-fluid" id="skills" ng-controller="getSkill">
     <p class="label">
-      <span class="glyphicon glyphicon-star"></span>
+      <span class="glyphicon glyphicon-fire"></span>
       Skill
-      <span class="glyphicon glyphicon-star"></span></p>
+      <span class="glyphicon glyphicon-fire"></span></p>
     <div class="skill">
       <div class="row" ng-repeat="item in result">
         <div class="progressLabel col-sm-2">{{item.name}}</div>
@@ -115,9 +115,9 @@
 
   <div class="whiteSection container-fluid" id="education" ng-controller="getEducation">
     <p class="label">
-      <span class="glyphicon glyphicon-star"></span>
+      <span class="glyphicon glyphicon-fire"></span>
       Education
-      <span class="glyphicon glyphicon-star"></span></p>
+      <span class="glyphicon glyphicon-fire"></span></p>
     <div class="timeline">
       <div class="row" ng-repeat="item in result">
         <div class="year">{{item.year}}</div>
