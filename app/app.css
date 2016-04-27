@@ -1,34 +1,270 @@
-/* app css stylesheet */
-
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+/*NGUYỄN VĂN HIỆN- 1312210*/
+.body {
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
-.menu:before {
-  content: "[";
+/*--------------------------------------------------
+NAVBAR
+---------------------------------------------------*/
+@media (max-width: 480px) {
+  .navbar {
+    font-size: 8px;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
 }
 
-.menu:after {
-  content: "]";
+.navbar {
+  background-color: #2c3e50;
+  text-transform: uppercase;
+  text-align: center;
+  display: inline-block;
+  height: 50px;
 }
 
-.menu > li {
-  display: inline;
+.navbar ul li {
+  display: inline-block;
+  position: relative;
+
 }
 
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
-}
-
-.menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
-}
-
-.menu li a{
+.navbar ul li a {
+  color: white;
+  font-weight: bold;
   text-decoration: none;
+  background-color: transparent;
+  padding: 15px;
 }
+
+.navbar ul li a:hover{
+  color: #18bc9c;
+  background-color: transparent;
+}
+
+.navbar .nav ul li a:active {
+  color: black;
+}
+
+.icon-bar {
+  color: white;
+  background-color: white;
+}
+/*--------------------------------------------------
+ABOUT Me
+---------------------------------------------------*/
+.aboutMe {
+  background-color: #18bc9c;
+  padding: 5%;
+  width: 100%;
+  height: auto;
+
+}
+
+.aboutMe img {
+  border-radius: 50%;
+  border-style: solid;
+  border-color: white;
+  padding: 5%;
+}
+
+
+.aboutMe .name {
+  margin-top: 23%;
+  color: white;
+  font-weight: bold;
+  font-size: 3vw;
+  text-transform: uppercase;
+}
+
+.aboutMe p {
+  font-size: 2.5vw;
+  color: white;
+}
+
+.aboutMe a {
+  text-decoration: none;
+  color: white;
+}
+
+.aboutMe .glyphicon {
+  padding-right: 10px;
+  vertical-align: middle;
+}
+
+/*--------------------------------------------------
+WHITE BACKGROUND
+---------------------------------------------------*/
+.whiteSection {
+  padding-top: 50px;
+  padding-bottom: 2%;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.whiteSection .label {
+  text-transform: uppercase;
+  font-size: 3vw;
+  color: #2c3e50;
+}
+
+.whiteSection p {
+  font-size: 1.5vw;
+  color: #2c3e50;
+  text-align: justify;
+  padding-top: 2%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.whiteSection span {
+  font-size: 2vw;
+  text-align: middle;
+}
+
+/*--------------------------------------------------
+Green BACKGROUND
+---------------------------------------------------*/
+.greenSection {
+  padding-top: 50px;
+  padding-bottom: 2%;
+  text-align: center;
+  background-color: #18bc9c;
+
+}
+
+.greenSection .label {
+  text-transform: uppercase;
+  font-size: 3vw;
+  color: white;
+}
+
+.greenSection p {
+  font-size: 1.5vw;
+  color: #2c3e50;
+  text-align: justify;
+  padding-top: 2%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.greenSection span {
+  font-size: 2vw;
+  text-align: middle;
+}
+/*--------------------------------------------------
+Experience & EDUCATION
+---------------------------------------------------*/
+.timeline {
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.timeline .year {
+  padding: 10px;
+  font-size: 3vw;
+  font-weight: bold;
+  display: inline-block;
+  vertical-align: top;
+  border-radius: 25px;
+  border-style: solid;
+  border-color: #2c3e50;
+  color: #2c3e50;
+}
+
+.timeline .icon {
+  padding-top: 1%;
+  color: white;
+  width: 7%;
+  font-size: 3vw;
+  display: inline-block;
+  vertical-align: top;
+  color: #2c3e50
+}
+
+.timeline .event {
+  padding-left: 30px;
+  padding-bottom: 20px;
+  border-left: thick double #2c3e50;
+  width: 60%;
+  font-size: 1.3vw;
+  display: inline-block;
+  text-align: justify;
+
+}
+
+.timeline .event .job {
+  text-transform: uppercase;
+  font-size: 1.5vw;
+  font-weight: bold;
+}
+/*--------------------------------------------------
+FROJECT
+---------------------------------------------------*/
+.projects {
+  margin-top: 2%;
+  margin-bottom: 1%;
+}
+
+.projects img {
+  width: 80%;
+  height: auto;
+  display: inline-block;
+  margin-bottom: 1%;
+  margin-top: 1%;
+}
+
+.projects .name {
+  text-transform: uppercase;
+  font-size: 1.5vw;
+  font-weight: bold;
+  padding-bottom: 20px;
+  color: #2c3e50;
+}
+
+
+/*--------------------------------------------------
+SKILL
+---------------------------------------------------*/
+.skill {
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+.skill .progress {
+  width: 100%;
+  display: inline-block;
+  height: 2vw;
+}
+
+.skill .progressLabel {
+  float: left;
+  text-transform: uppercase;
+  font-size: 1.5vw;
+  font-weight: bold;
+  color: white;
+  display: inline-block;
+}
+
+.skill .row {
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+/*--------------------------------------------------
+FOOTER
+---------------------------------------------------*/
+.footer {
+  background-color: #2c3e50;
+  text-transform: uppercase;
+  text-align: center;
+  display: inline-block;
+  height: 50px;
+  width: 100%;
+  color: white;
+  font-weight: bold;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  height: auto;
+}
+
