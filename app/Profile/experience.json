@@ -1,0 +1,19 @@
+[
+	{
+		"year" :  "2015",
+		"job" : "Leader Analysis and Design software Project",
+		"place" : "HCM University of Sciences",
+		"tasks" : 	[
+						{"value" : "TeamWork."},		
+						{"value" : "Coding for Student Manager Project."}
+					]
+	},
+	{
+		"year" :  "2014",
+		"job" : "Leader for OS Project",
+		"place" : "HCM University of Sciences",
+		"tasks" : 	[
+						{"value" : "Coding, coding and coding."},		
+					]
+	}
+]

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>      <html lang="en" ng-app="myCV" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myCV" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myCV" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myCV" class="no-js"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
+  <title>Nguyễn Văn Hiện - CV</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
@@ -15,18 +15,123 @@
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
-  <ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-    <li><a href="#/view2">view2</a></li>
+<body ng-app="myCV">
+<nav class="navbar navbar-fixed-top container-fluid">
+  <ul class="nav">
+    <li><a href="#summary">Summary</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#project">Project</a></li>
+    <li><a href="#skills">Skill</a></li>
+    <li><a href="#education">Education</a></li>
   </ul>
+</nav>
+<div class="body">
+  <div class="aboutMe container-fluid">
+    <div class="row">
+      <div class="col-xs-6">
+        <img class="img-responsive" src="./images/me.jpg">
+      </div>
+      <div class="col-xs-6" style="vertical-align: middle;" ng-controller="getAboutMe">
+        <p class="name">{{result.Name}}</p>
+        <p>
+          <span class="glyphicon glyphicon-flag"></span> {{result.Country}} <br/>
+          <span class="glyphicon glyphicon-briefcase"></span> {{result.Major}} <br/>
+          <span class="glyphicon glyphicon-phone"></span> {{result.Mobile}} <br/>
+          <span class="glyphicon glyphicon-envelope"></span> <a href="mailto:{{result.Email}}"> {{result.Email}} </a>
+        </p>
+      </div>
+    </div>
+  </div>
 
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
+  <div class="whiteSection container-fluid" id="summary" ng-controller="getSummary">
+    <p class="label">
+      <span class="glyphicon glyphicon-star"></span>
+      summary
+      <span class="glyphicon glyphicon-star"></span></p>
+    <p>
+			<span ng-repeat="item in result">
+				{{item.value}} <br/><br/>
+			</span>
+    </p>
+  </div>
 
-  <div ng-view></div>
+  <div class="greenSection container-fluid" id="experience" ng-controller="getExperience">
+    <p class="label">
+      <span class="glyphicon glyphicon-star"></span>
+      Experience
+      <span class="glyphicon glyphicon-star"></span></p>
+    <div class="timeline">
+      <div class="row" ng-repeat="item in result">
+        <div class="year">{{item.year}}</div>
+        <span class="glyphicon glyphicon-flag icon"></span>
+        <div class="event">
+          <p class="job">{{item.job}}</p>
+          Working at {{item.place}} <br/>
+          <strong>My main tasks are:</strong>
+          <ul ng-repeat="subitem in item.tasks">
+            <li>{{subitem.value}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <div>Angular seed app: v<span app-version></span></div>
+  <div class="whiteSection container-fluid" id="project" ng-controller="getProject">
+    <p class="label">
+      <span class="glyphicon glyphicon-star"></span>
+      Project
+      <span class="glyphicon glyphicon-star"></span></p>
+    <div class="projects" >
+      <div ng-repeat="item in result | filter:query as filtered">
+        <div class="col-md-4">
+          <img src="{{item.url}}">
+          <div class="name">{{item.name}}</div>
+          <br ng-if="$index === 2"/>
+        </div>
+      </div>
+      <div>
+      </div>
+    </div>
+  </div>
+
+  <div class="greenSection container-fluid" id="skills" ng-controller="getSkill">
+    <p class="label">
+      <span class="glyphicon glyphicon-star"></span>
+      Skill
+      <span class="glyphicon glyphicon-star"></span></p>
+    <div class="skill">
+      <div class="row" ng-repeat="item in result">
+        <div class="progressLabel col-sm-2">{{item.name}}</div>
+        <div class="col-sm-10">
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:{{item.exp}}">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="whiteSection container-fluid" id="education" ng-controller="getEducation">
+    <p class="label">
+      <span class="glyphicon glyphicon-star"></span>
+      Education
+      <span class="glyphicon glyphicon-star"></span></p>
+    <div class="timeline">
+      <div class="row" ng-repeat="item in result">
+        <div class="year">{{item.year}}</div>
+        <span class="glyphicon glyphicon-flag icon"></span>
+        <div class="event">
+          <p class="job">{{item.job}}</p>
+          Study at: {{item.place}} <br/>
+          <ul ng-repeat="subitem in item.data">
+            <li>{{subitem.value}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
@@ -34,8 +139,6 @@
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="app.js"></script>
-  <script src="view1/view1.js"></script>
-  <script src="view2/view2.js"></script>
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
   <script src="components/version/interpolate-filter.js"></script>
