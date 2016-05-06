@@ -24,12 +24,31 @@
 <div class="wrapper">
     <div class="sidebar-wrapper" ng-controller="getAboutMe">
         <div class="profile-container">
-            <img class="img-circle profile" src="images/profile.jpg" alt="" width="200px" height="200px"/>
+            <img class="img-circle profile" ng-src="{{result.Img}}" alt="" width="250px" height="250px"data-toggle="modal" data-target="#myModalImg"/>
 
             <h1 class="name">{{result.Name}}</h1>
             <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModalName"><span
                     class="glyphicon glyphicon-pencil"></span></button>
         </div>
+
+        <div id="myModalImg" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="Path" style="color: #000000"><span class="glyphicon glyphicon-film"></span> Source file</label>
+                        <input type="text" class="form-control" id="Path" ng-model="result.Img">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
         <!--Thay đổi thông tin tên người dùng-->
         <div id="myModalName" class="modal fade" role="dialog">
             <div class="modal-dialog">
