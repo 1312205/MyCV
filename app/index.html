@@ -27,132 +27,219 @@
             <img class="img-circle profile" src="images/profile.jpg" alt="" width="200px" height="200px"/>
 
             <h1 class="name">{{result.Name}}</h1>
+            <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModalName"><span
+                    class="glyphicon glyphicon-pencil"></span></button>
         </div>
-        <!--//profile-container-->
+        <!--Thay đổi thông tin tên người dùng-->
+        <div id="myModalName" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
 
-        <div class="contact-container container-block">
-            <ul class="list-unstyled contact-list">
-                <li><i class="fa fa-university"><span>{{result.Major}}</span></i></li>
-                <li><i class="fa fa-phone"></i><a href="tel:0123 456 789">{{result.Mobile}}</a></li>
-                <li class="email"><i class="fa fa-envelope"></i><a
-                        href="mailto: yourname@email.com">{{result.Email}}</a>
-                </li>
-                <li><i class="fa fa-flag"></i><span>{{result.Country}}</span></li>
-                <li><i class="fa fa-linkedin"></i><a href="{{result.Linkedin}}" target="_blank">Linkedin</a></li>
-                <li><i class="fa fa-facebook"></i><a href="{{result.Facebook}}" target="_blank">Facebook</a></li>
-            </ul>
-        </div>
-        <!--//contact-container-->
-
-    </div>
-    <!--//sidebar-wrapper-->
-
-    <div class="main-wrapper" >
-
-        <section class="section summary-section" ng-controller="getSummary">
-            <h2 class="section-title"><i class="fa fa-user"></i>Sumary</h2>
-
-            <div class="summary">
-                <p ng-repeat="item in result">
-
-                        {{item.value}}
-                </p>
-            </div>
-            <!--//summary-->
-        </section>
-        <!--//section-->
-
-        <section class="section experiences-section" ng-controller="getExperience">
-            <h2 class="section-title"><i class="fa fa-briefcase"></i>Experiences</h2>
-
-            <div class="item"  ng-repeat="item in result">
-                <div class="meta">
-                    <div class="upper-row">
-                        <h3 class="job-title">{{item.job}}</h3>
-
-                        <div class="time">{{item.year}}</div>
-                    </div>
-                    <!--//upper-row-->
-                    <div class="company">{{item.place}}</div>
-                </div>
-                <!--//meta-->
-                <strong>My main tasks are:</strong>
-                <ul ng-repeat="subitem in item.tasks">
-                    <li>{{subitem.value}}</li>
-                </ul>
-            </div>
-            <!--//item-->
-        </section>
-
-
-        <section class="section projects-section" ng-controller="getProject">
-            <h2 class="section-title"><i class="fa fa-archive"></i>Projects</h2>
-
-            <div class="intro">
-                <p>Dưới đây là một số đồ án mà tôi đã từng làm.</p>
-            </div>
-            <!--//intro-->
-            <div class="item" ng-repeat="item in result">
-                <span class="project-title"><strong>{{item.name}}</strong></span>
-                <p class="project-tagline">{{item.decription}}</p>
-
-            </div>
-
-        </section>
-        <!--//section-->
-
-        <section class="skills-section section" ng-controller="getSkill">
-            <h2 class="section-title"><i class="fa fa-rocket"></i>Skills</h2>
-
-            <div class="skillset">
-                <div class="item" ng-repeat="item in result">
-                    <h3 class="level-title">{{item.name}}</h3>
-
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{item.exp}};">
-                            <span class="sr-only">60% Complete</span>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="name" style="color: #000000"><span class="glyphicon glyphicon-user"></span> Name</label>
+                            <input type="text" class="form-control" id="name" ng-model="result.Name">
                         </div>
                     </div>
-                    <!--//level-bar-->
-                </div>
-                <!--//item-->
-            </div>
-        </section>
-        <!--//skills-section-->
-
-        <section class="section education-section" ng-controller="getEducation">
-            <h2 class="section-title"><i class="fa fa-briefcase"></i>Education</h2>
-
-            <div class="item"  ng-repeat="item in result">
-                <div class="meta">
-                    <div class="upper-row">
-                        <h3 class="job-title">{{item.job}}</h3>
-
-                        <div class="time">{{item.year}}</div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
-                    <!--//upper-row-->
-                    <div class="company">{{item.place}}</div>
                 </div>
-                <!--//meta-->
-                <ul ng-repeat="subitem in item.data">
-                    <li>{{subitem.value}}</li>
-                </ul>
+
+            </div>
+        </div>
+    <!--//profile-container-->
+
+    <div class="contact-container container-block">
+        <ul class="list-unstyled contact-list">
+            <li><i class="fa fa-university"><span>{{result.Major}}</span></i>
+                <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModalInfo"><span
+                        class="glyphicon glyphicon-pencil"></span></button></li>
+
+
+            <li><i class="fa fa-phone"></i><a href="tel:0123 456 789">{{result.Mobile}}</a>
+                <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModalInfo"><span
+                        class="glyphicon glyphicon-pencil"></span></button></li>
+
+
+            <li class="email"><i class="fa fa-envelope"></i><a
+                    href="mailto: yourname@email.com">{{result.Email}}</a>
+                <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModalInfo"><span
+                        class="glyphicon glyphicon-pencil"></span></button>
+            </li>
+
+
+            <li><i class="fa fa-flag"></i><span>{{result.Country}}</span>
+                <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModalInfo"><span
+                        class="glyphicon glyphicon-pencil"></span></button></li>
+
+
+            <li><i class="fa fa-linkedin"></i><a href="{{result.Linkedin}}" target="_blank">Linkedin</a>
+                <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModalInfo"><span
+                        class="glyphicon glyphicon-pencil"></span></button></li>
+
+
+            <li><i class="fa fa-facebook"></i><a href="{{result.Facebook}}" target="_blank">Facebook</a>
+                <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#myModalInfo"><span
+                        class="glyphicon glyphicon-pencil"></span></button></li>
+
+        </ul>
+        <div id="myModalInfo" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="major" style="color: #000000"><i class="fa fa-university"></i> Major</label>
+                            <input type="text" class="form-control" id="major" ng-model="result.Major">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone" style="color: #000000"><i class="fa fa-phone"></i> Phone</label>
+                            <input type="text" class="form-control" id="phone" ng-model="result.Mobile">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" style="color: #000000"><i class="fa fa-envelope"></i> Email</label>
+                            <input type="text" class="form-control" id="email" ng-model="result.Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="country" style="color: #000000"><i class="fa fa-flag"></i> Country</label>
+                            <input type="text" class="form-control" id="country" ng-model="result.Country">
+                        </div>
+                        <div class="form-group">
+                            <label for="linkedin" style="color: #000000"><i class="fa fa-linkedin"></i> Linkedin</label>
+                            <input type="text" class="form-control" id="linkedin" ng-model="result.Linkedin">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="facebook" style="color: #000000"><i class="fa fa-facebook"></i> Facebook</label>
+                            <input type="text" class="form-control" id="facebook" ng-model="result.Facebook">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--//contact-container-->
+
+</div>
+<!--//sidebar-wrapper-->
+
+<div class="main-wrapper">
+
+    <section class="section summary-section" ng-controller="getSummary">
+        <h2 class="section-title"><i class="fa fa-user"></i>Sumary</h2>
+
+        <div class="summary">
+            <p ng-repeat="item in result">
+
+                {{item.value}}
+            </p>
+        </div>
+        <!--//summary-->
+    </section>
+    <!--//section-->
+
+    <section class="section experiences-section" ng-controller="getExperience">
+        <h2 class="section-title"><i class="fa fa-briefcase"></i>Experiences</h2>
+
+        <div class="item" ng-repeat="item in result">
+            <div class="meta">
+                <div class="upper-row">
+                    <h3 class="job-title">{{item.job}}</h3>
+
+                    <div class="time">{{item.year}}</div>
+                </div>
+                <!--//upper-row-->
+                <div class="company">{{item.place}}</div>
+            </div>
+            <!--//meta-->
+            <strong>My main tasks are:</strong>
+            <ul ng-repeat="subitem in item.tasks">
+                <li>{{subitem.value}}</li>
+            </ul>
+        </div>
+        <!--//item-->
+    </section>
+
+
+    <section class="section projects-section" ng-controller="getProject">
+        <h2 class="section-title"><i class="fa fa-archive"></i>Projects</h2>
+
+        <div class="intro">
+            <p>Dưới đây là một số đồ án mà tôi đã từng làm.</p>
+        </div>
+        <!--//intro-->
+        <div class="item" ng-repeat="item in result">
+            <span class="project-title"><strong>{{item.name}}</strong></span>
+
+            <p class="project-tagline">{{item.decription}}</p>
+
+        </div>
+
+    </section>
+    <!--//section-->
+
+    <section class="skills-section section" ng-controller="getSkill">
+        <h2 class="section-title"><i class="fa fa-rocket"></i>Skills</h2>
+
+        <div class="skillset">
+            <div class="item" ng-repeat="item in result">
+                <h3 class="level-title">{{item.name}}</h3>
+
+                <div class="progress">
+                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60"
+                         aria-valuemin="0" aria-valuemax="100" style="width: {{item.exp}};">
+                        <span class="sr-only">60% Complete</span>
+                    </div>
+                </div>
+                <!--//level-bar-->
             </div>
             <!--//item-->
-        </section>
+        </div>
+    </section>
+    <!--//skills-section-->
 
-    </div>
-    <!--//main-body-->
+    <section class="section education-section" ng-controller="getEducation">
+        <h2 class="section-title"><i class="fa fa-briefcase"></i>Education</h2>
+
+        <div class="item" ng-repeat="item in result">
+            <div class="meta">
+                <div class="upper-row">
+                    <h3 class="job-title">{{item.job}}</h3>
+
+                    <div class="time">{{item.year}}</div>
+                </div>
+                <!--//upper-row-->
+                <div class="company">{{item.place}}</div>
+            </div>
+            <!--//meta-->
+            <ul ng-repeat="subitem in item.data">
+                <li>{{subitem.value}}</li>
+            </ul>
+        </div>
+        <!--//item-->
+    </section>
+
+</div>
+<!--//main-body-->
 </div>
 
 <footer class="footer">
     <div class="text-center">
         <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
-       <i class="fa fa-copyright"></i> <small class="copyright">Designed with Hiện Nguyễn</small>
+        <i class="fa fa-copyright"></i>
+        <small class="copyright">Designed with Hiện Nguyễn</small>
     </div>
     <!--//container-->
 </footer>
 <!--//footer-->
+<!-- Modal Name -->
 
 <!-- In production use:
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
@@ -165,5 +252,12 @@
 <script src="components/version/version.js"></script>
 <script src="components/version/version-directive.js"></script>
 <script src="components/version/interpolate-filter.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#myBtn").click(function () {
+            $("#myModal").modal();
+        });
+    });
+</script>
 </body>
 </html>
