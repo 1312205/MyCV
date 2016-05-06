@@ -43,6 +43,10 @@ myApp.controller("getExperience", ['$scope', '$http', function($scope, $http){
       $scope.result.push(temp);
     }
   }
+
+  $scope.removeItem = function (x) {
+    $scope.result.splice(x, 1);
+  }
 }]);
 
 myApp.controller("getProject", ['$scope', '$http', function($scope, $http){
@@ -58,6 +62,9 @@ myApp.controller("getProject", ['$scope', '$http', function($scope, $http){
       $scope.result.push(temp);
     }
   }
+  $scope.removeItem = function (x) {
+    $scope.result.splice(x, 1);
+  }
 }]);
 
 myApp.controller("getSkill", ['$scope', '$http', function($scope, $http){
@@ -72,6 +79,10 @@ myApp.controller("getSkill", ['$scope', '$http', function($scope, $http){
         "exp": $scope.exp};
       $scope.result.push(temp);
     }
+  }
+
+  $scope.removeItem = function (x) {
+    $scope.result.splice(x, 1);
   }
 }]);
 
@@ -93,6 +104,9 @@ myApp.controller("getEducation", ['$scope', '$http', function($scope, $http){
       };
       $scope.result.push(temp);
     }
+  }
+  $scope.removeItem = function (x) {
+    $scope.result.splice(x, 1);
   }
 }]);
 

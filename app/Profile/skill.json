@@ -1,26 +1,26 @@
 [
 	{
 		"name" : "C++",
-		"exp" : "80%"
+		"exp" : "80"
 	},
 	{
 		"name" : "C#",
-		"exp" : "70%"
+		"exp" : "70"
 	},
   	{
 		"name" : "Java",
-		"exp" : "60%"
+		"exp" : "60"
   	},
 	{
 		"name" : "HTML",
-		"exp" : "70%"
+		"exp" : "70"
 	},
 	{
 		"name" : "CSS",
-		"exp" : "60%"
+		"exp" : "60"
 	},
 	{
 		"name" : "Javascript",
-		"exp" : "65%"
+		"exp" : "65"
 	} 
 ]
