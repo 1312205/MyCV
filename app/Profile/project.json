@@ -1,26 +1,24 @@
 [
-	{
-		"url" : "./images/liverpool.jpg",
-		"name" : "Liverpool Academy"
-	},
-	{
-		"url" : "./images/malibu.jpg",
-		"name" : "Malibu Boats AU"
-	},
-	{
-		"url" : "./images/manning.jpg",
-		"name" : "Manning Hotel"
-	},
-	{
-		"url" : "./images/600cranes.jpg",
-		"name" : "600 Cranes"
-	},
-	{
-		"url" : "./images/p2g.jpg",
-		"name" : "Place 2 Go"
-	},
-	{
-		"url" : "./images/blade.jpg",
-		"name" : "Blade"
-	}
+  {
+	"name": "Quản lý thư viện Sách",
+	"decription":"Đây là 1 đồ án của môn Kĩ Thuật Lập Trình trên ngôn ngữ C++. Đồ án này nhằm giúp chúng tôi hiểu về lập trình lập trình thủ tục, làm việc với tập tin, xử lý chuỗi và một số kỹ thuật khác."
+  },
+  {
+	"name": "Hệ thống Trạm ATM",
+	"decription": "Đây là đồ án của môn Lập Trình Hướng Đối Tượng trên ngôn ngữ C++. Đồ án này giúp chúng tôi hiểu được những nguyên tắc cơ bản trong lập trình hướng đối tượng, thấy được ưu điểm của nó và vận dụng nó vào trong các đồ án khác."
+  },
+  {
+	"name": "Đồ Án Hệ Điều Hành",
+	"decription": "Đây thực sự là 1 đồ án mà đa phần sinh viên đều vất vả để làm những kiến thức nó mang lại thì chẳng thấy áp dụng gì được cho sau này. Tôi cảm nhận như vậy, dù cho nó là 1 môn nền tảng cho các môn khác sau này."
+  },
+
+  {
+	"name": "Đồ Án Lập Trình Window",
+	"decription": "Đây là đồ án của môn Lập Trình Window với ngôn ngữ C# và thiết kế giao diện với WPF. Đây là 1 đồ án khá thú vị, giúp chúng tôi tăng khả năng về lập trình với giao diện, lập trình về sự kiện. Nó làm nền tảng cho việc học các môn sau này dễ dàng hơn."
+  },
+
+  {
+	"name": "Đồ Án Quản lý và Phân Tích Yêu Cầu Phần Mềm",
+	"decription": "Đây là 1 đồ án mà chúng tôi chẳng phải code gì cả mà chỉ có đi tìm hiểu, đi phỏng vấn, viết word, excel và làm báo cáo. Môn học giúp chúng tôi hiểu về quy trình để lấy được yêu cầu từ khách hàng cho 1 sản phẩm phần mềm mà họ mong muốn."
+  }
 ]
