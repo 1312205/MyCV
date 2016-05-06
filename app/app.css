@@ -97,11 +97,6 @@ p {
   margin-top: 0;
   margin-bottom: 15px;
 }
-.sidebar-wrapper .degree {
-  font-size: 14px;
-  margin-top: 0;
-  margin-bottom: 5px;
-}
 
 .main-wrapper {
   background: #fff;
@@ -234,5 +229,3 @@ p {
   }
 }
 
-/* Large devices (large desktops, 1200px and up) */
-/* Ex-Large devices (large desktops, 1200px and up) */

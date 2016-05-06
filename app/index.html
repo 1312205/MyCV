@@ -10,7 +10,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Nguyễn Văn Hiện - CV</title>
+    <title>Nguyễn Văn Hiện - 1312205 - CV</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
@@ -22,33 +22,37 @@
 </head>
 <body ng-app="myApp">
 <div class="wrapper">
+    <!--PHẦN SIDEBAR - THANH DỌC CHỨA CÁC THÔNG TIN CƠ BẢN-->
     <div class="sidebar-wrapper" ng-controller="getAboutMe">
+        <!--Phần chứ ảnh đại diện và tên người dùng-->
         <div class="profile-container">
-            <img class="img-circle profile" ng-src="{{result.Img}}" alt="" width="250px" height="250px"data-toggle="modal" data-target="#myModalImg"/>
+            <img class="img-circle profile" ng-src="{{result.Img}}" alt="" width="250px" height="250px"
+                 data-toggle="modal" data-target="#myModalImg"/>
 
             <h1 class="name">{{result.Name}}</h1>
             <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModalName"><span
                     class="glyphicon glyphicon-pencil"></span></button>
         </div>
 
+        <!--Modal để sửa thông đường dẫn ảnh đại diện-->
         <div id="myModalImg" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <!-- Modal content-->
-            <div class="modal-content">
-
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="Path" style="color: #000000"><span class="glyphicon glyphicon-film"></span> Source file</label>
-                        <input type="text" class="form-control" id="Path" ng-model="result.Img">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="Path" style="color: #000000"><span class="glyphicon glyphicon-film"></span>
+                                Source file</label>
+                            <input type="text" class="form-control" id="Path" ng-model="result.Img">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
             </div>
-
         </div>
-    </div>
+
         <!--Thay đổi thông tin tên người dùng-->
         <div id="myModalName" class="modal fade" role="dialog">
             <div class="modal-dialog">
@@ -70,22 +74,24 @@
         </div>
         <!--//profile-container-->
 
+        <!--Phần các thông tin cơ bản -->
         <div class="contact-container container-block">
             <ul class="list-unstyled contact-list">
+                <!--Chuyên ngành-->
                 <li><i class="fa fa-university"><span>{{result.Major}}</span></i>
                     <button type="button" class="btn btn-info btn-xs" data-toggle="modal"
                             data-target="#myModalInfo"><span
                             class="glyphicon glyphicon-pencil"></span></button>
                 </li>
 
-
+                <!--Số điện thoại-->
                 <li><i class="fa fa-phone"></i><a href="tel:0123 456 789">{{result.Mobile}}</a>
                     <button type="button" class="btn btn-info btn-xs" data-toggle="modal"
                             data-target="#myModalInfo"><span
                             class="glyphicon glyphicon-pencil"></span></button>
                 </li>
 
-
+                <!--Email-->
                 <li class="email"><i class="fa fa-envelope"></i><a
                         href="mailto: yourname@email.com">{{result.Email}}</a>
                     <button type="button" class="btn btn-info btn-xs" data-toggle="modal"
@@ -93,28 +99,28 @@
                             class="glyphicon glyphicon-pencil"></span></button>
                 </li>
 
-
+                <!--Quốc gia-->
                 <li><i class="fa fa-flag"></i><span>{{result.Country}}</span>
                     <button type="button" class="btn btn-info btn-xs" data-toggle="modal"
                             data-target="#myModalInfo"><span
                             class="glyphicon glyphicon-pencil"></span></button>
                 </li>
 
-
+                <!--Link profile trên Linkedin    -->
                 <li><i class="fa fa-linkedin"></i><a href="{{result.Linkedin}}" target="_blank">Linkedin</a>
                     <button type="button" class="btn btn-info btn-xs" data-toggle="modal"
                             data-target="#myModalInfo"><span
                             class="glyphicon glyphicon-pencil"></span></button>
                 </li>
 
-
+                <!--Link profile trên Facebook-->
                 <li><i class="fa fa-facebook"></i><a href="{{result.Facebook}}" target="_blank">Facebook</a>
                     <button type="button" class="btn btn-info btn-xs" data-toggle="modal"
                             data-target="#myModalInfo"><span
                             class="glyphicon glyphicon-pencil"></span></button>
                 </li>
-
             </ul>
+            <!--MODAL để thay đổi các thông tin cơ bản-->
             <div id="myModalInfo" class="modal fade" role="dialog">
                 <div class="modal-dialog">
                     <!-- Modal content-->
@@ -162,11 +168,13 @@
     </div>
     <!--//sidebar-wrapper-->
 
+    <!--PHẦN BACKGROUND CỦA CV-->
     <div class="main-wrapper">
 
+        <!--PHẦN SUMMARY-->
         <section class="section summary-section" ng-controller="getSummary">
             <h2 class="section-title"><i class="fa fa-user"></i>Sumary</h2>
-
+            <!--Phần nội dung trong Summary-->
             <div class="summary">
                 <p ng-repeat="item in result">
 
@@ -181,7 +189,7 @@
                 </button>
             </div>
             <!--//summary-->
-            <!--Chỉnh sửa thông tin Summary-->
+            <!--Chỉnh sửa và xóa thông tin Summary-->
             <div id="myModalSummary" class="modal fade container" role="dialog">
                 <div class="modal-dialog modal-lg">
                     <!-- Modal content-->
@@ -236,9 +244,10 @@
         </section>
         <!--//section-->
 
+        <!--PHẦN EXPERIENCES-->
         <section class="section experiences-section" ng-controller="getExperience">
             <h2 class="section-title"><i class="fa fa-briefcase"></i>Experiences</h2>
-
+            <!--Phần nội dung của Experiences-->
             <div class="item" ng-repeat="item in result">
                 <div class="meta">
                     <div class="upper-row">
@@ -265,7 +274,7 @@
                 </button>
             </div>
             <!--//item-->
-
+            <!--Modal để sửa và xóa các thông tin trong Experiences-->
             <div id="myModalExperience" class="modal fade" role="dialog">
                 <div class="modal-dialog modal-lg">
                     <!-- Modal content-->
@@ -273,9 +282,11 @@
                         <div class="modal-body">
                             <li type="1" ng-repeat="item in result">
                                 <div class="form-group">
-                                    <label for="job"> Job <button class="btn btn-danger btn-xs" style="margin-top: 20px"
-                                                                  ng-click="removeItem($index)"><span
-                                            class="glyphicon glyphicon-remove"> Xóa</span></button></label>
+                                    <label for="job"> Job
+                                        <button class="btn btn-danger btn-xs" style="margin-top: 20px"
+                                                ng-click="removeItem($index)"><span
+                                                class="glyphicon glyphicon-remove"> Xóa</span></button>
+                                    </label>
                                     <input type="text" class="form-control" id="job" ng-model="item.job">
 
                                 </div>
@@ -306,6 +317,7 @@
                 </div>
             </div>
 
+            <!--Modal để thêm thông tin trong Experiences-->
             <div id="myModalAddExperience" class="modal fade" role="dialog">
                 <div class="modal-dialog modal-lg">
                     <!-- Modal content-->
@@ -339,10 +351,10 @@
             </div>
         </section>
 
-
+        <!--PHẦN PROJECT-->
         <section class="section projects-section" ng-controller="getProject">
             <h2 class="section-title"><i class="fa fa-archive"></i>Projects</h2>
-
+            <!--Nội dung trong phần Project-->
             <div class="intro">
                 <p>Dưới đây là một số đồ án mà tôi đã từng làm.</p>
             </div>
@@ -363,7 +375,7 @@
                 </button>
             </div>
 
-
+            <!--Modal cho việc sửa và xóa thông tin các project-->
             <div id="myModalProject" class="modal fade" role="dialog">
                 <div class="modal-dialog modal-lg">
                     <!-- Modal content-->
@@ -371,9 +383,11 @@
                         <div class="modal-body">
                             <li type="1" ng-repeat="item in result">
                                 <div class="form-group">
-                                    <label for="nameproject"> Project Name<button class="btn btn-danger btn-xs" style="margin-top: 20px"
-                                                                                  ng-click="removeItem($index)"><span
-                                            class="glyphicon glyphicon-remove"> Xóa</span></button></label>
+                                    <label for="nameproject"> Project Name
+                                        <button class="btn btn-danger btn-xs" style="margin-top: 20px"
+                                                ng-click="removeItem($index)"><span
+                                                class="glyphicon glyphicon-remove"> Xóa</span></button>
+                                    </label>
                                     <input type="text" class="form-control" id="nameproject" ng-model="item.name">
                                 </div>
                                 <div class="form-group">
@@ -391,6 +405,7 @@
                 </div>
             </div>
 
+            <!--Modal cho việc thêm 1 project-->
             <div id="myModalAddProject" class="modal fade" role="dialog">
                 <div class="modal-dialog modal-lg">
                     <!-- Modal content-->
@@ -419,16 +434,19 @@
         </section>
         <!--//section-->
 
+        <!--PHẦN SKILL-->
         <section class="skills-section section" ng-controller="getSkill">
             <h2 class="section-title"><i class="fa fa-rocket"></i>Skills</h2>
-
+            <!--Nội dung phần skill-->
             <div class="skillset">
                 <div class="item" ng-repeat="item in result">
-                    <h3 class="level-title">{{item.name}} <button type="button"
-                                                                  class="btn btn-info btn-sm"
-                                                                  data-toggle="modal"
-                                                                  data-target="#myModalSkill"><span
-                            class="glyphicon glyphicon-pencil"></span></button></span></h3>
+                    <h3 class="level-title">{{item.name}}
+                        <button type="button"
+                                class="btn btn-info btn-sm"
+                                data-toggle="modal"
+                                data-target="#myModalSkill"><span
+                                class="glyphicon glyphicon-pencil"></span></button>
+                        </span></h3>
 
                     <div class="progress">
                         <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60"
@@ -446,7 +464,7 @@
                 </button>
             </div>
 
-
+            <!--Modal để sửa và xóa các Skill-->
             <div id="myModalSkill" class="modal fade" role="dialog">
                 <div class="modal-dialog modal-lg">
                     <!-- Modal content-->
@@ -454,9 +472,11 @@
                         <div class="modal-body">
                             <li type="1" ng-repeat="item in result">
                                 <div class="form-group">
-                                    <label for="skillname"> Skill Name<button class="btn btn-danger btn-xs" style="margin-top: 20px"
-                                                                              ng-click="removeItem($index)"><span
-                                            class="glyphicon glyphicon-remove"> Xóa</span></button></label>
+                                    <label for="skillname"> Skill Name
+                                        <button class="btn btn-danger btn-xs" style="margin-top: 20px"
+                                                ng-click="removeItem($index)"><span
+                                                class="glyphicon glyphicon-remove"> Xóa</span></button>
+                                    </label>
                                     <input type="text" class="form-control" id="skillname" ng-model="item.name">
                                 </div>
                                 <div class="form-group">
@@ -473,6 +493,7 @@
                 </div>
             </div>
 
+            <!--Modal để thêm vào 1 skill-->
             <div id="myModalAddSkill" class="modal fade" role="dialog">
                 <div class="modal-dialog modal-lg">
                     <!-- Modal content-->
@@ -501,15 +522,18 @@
         </section>
         <!--//skills-section-->
 
+        <!--PHẦN EDUCATION-->
         <section class="section education-section" ng-controller="getEducation">
             <h2 class="section-title"><i class="fa fa-briefcase"></i>Education</h2>
-
+             <!--Nội dung trong education   -->
             <div class="item" ng-repeat="item in result">
                 <div class="meta">
                     <div class="upper-row">
-                        <h3 class="job-title">{{item.job}} <button type="button" class="btn btn-info btn-sm" data-toggle="modal"
-                                                                   data-target="#myModalEducation"><span
-                                class="glyphicon glyphicon-pencil"></span></button></h3>
+                        <h3 class="job-title">{{item.job}}
+                            <button type="button" class="btn btn-info btn-sm" data-toggle="modal"
+                                    data-target="#myModalEducation"><span
+                                    class="glyphicon glyphicon-pencil"></span></button>
+                        </h3>
 
                         <div class="time">{{item.year}}</div>
                     </div>
@@ -528,7 +552,7 @@
                 </button>
             </div>
             <!--//item-->
-
+            <!--Modal cho việc sửa và xóa các thông tin Education-->
             <div id="myModalEducation" class="modal fade" role="dialog">
                 <div class="modal-dialog modal-lg">
                     <!-- Modal content-->
@@ -536,9 +560,11 @@
                         <div class="modal-body">
                             <li type="1" ng-repeat="item in result">
                                 <div class="form-group">
-                                    <label for="jobedu"> Job <button class="btn btn-danger btn-xs" style="margin-top: 20px"
-                                                                     ng-click="removeItem($index)"><span
-                                            class="glyphicon glyphicon-remove"> Xóa</span></button></label>
+                                    <label for="jobedu"> Job
+                                        <button class="btn btn-danger btn-xs" style="margin-top: 20px"
+                                                ng-click="removeItem($index)"><span
+                                                class="glyphicon glyphicon-remove"> Xóa</span></button>
+                                    </label>
                                     <input type="text" class="form-control" id="jobedu" ng-model="item.job">
                                 </div>
                                 <div class="form-group">
@@ -568,6 +594,7 @@
                 </div>
             </div>
 
+            <!--Modal cho việc thêm thông tin Education-->
             <div id="myModalAddEducation" class="modal fade" role="dialog">
                 <div class="modal-dialog modal-lg">
                     <!-- Modal content-->
@@ -602,9 +629,10 @@
         </section>
 
     </div>
-    <!--//main-body-->
+    <!--//KẾT THÚC BACKGROUND-->
 </div>
 
+<!--Phần tạo thêm footer cho dòng copyright-->
 <footer class="footer">
     <div class="text-center">
         <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
@@ -627,12 +655,6 @@
 <script src="components/version/version.js"></script>
 <script src="components/version/version-directive.js"></script>
 <script src="components/version/interpolate-filter.js"></script>
-<script>
-    $(document).ready(function () {
-        $("#myBtn").click(function () {
-            $("#myModal").modal();
-        });
-    });
-</script>
+
 </body>
 </html>
